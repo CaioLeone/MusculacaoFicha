@@ -9,6 +9,7 @@
 3. Rosca
 4. Kettlebell
 5. Aparelho
+6. Livre
 
 ## Grupo Muscular
 
