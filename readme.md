@@ -1,8 +1,18 @@
-# Projeto Ficha de Musculação
+# Fitness Workout Program :muscle::sunglasses:
 
-* Projeto criado para cadastrar fichas de academia de forma modular e otimizada
+***
 
-## Equipamentos
+* Best way to create and customize your daily workout 
+
+* The main goal to this project is to create an application where the users can create and customize theirs workout routine based on their fitness necessities and fitnees goal 
+
+## Functions
+
+* Create, Update, Delete Exercise
+* Create, Update, Delete Workout
+* IMC/BMI (Body Mass Index)
+
+## Equipaments
 
 1. Polia
 2. Halteres
