@@ -12,6 +12,24 @@
 * Create, Update, Delete Workout
 * IMC/BMI (Body Mass Index)
 
+## Technologies
+
+* Javascript
+
+* NodeJS
+
+* Express
+
+* Ejs
+
+* Nodemon
+
+* Bcrypt
+
+* Sequelize
+
+* Body-parser
+
 ## Equipaments
 
 1. Polia
