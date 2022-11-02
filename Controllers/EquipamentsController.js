@@ -12,7 +12,7 @@ router.post("/equipaments/save", (req, res) => {
     if(equip_name != undefined){
         Equipament.create({
             equip_name: equip_name
-        });then(() => {
+        }).then(() => {
 
         })
     }else{
