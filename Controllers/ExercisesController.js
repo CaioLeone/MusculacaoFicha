@@ -27,4 +27,24 @@ router.get("/admin/exercises", (req, res) => {
     });
 });
 
+//DELETE BY ID
+router.post("/exercises/delete", (req, res) => {
+    var id = req.body.id;
+    if(id != undefined){
+        if(isNaN(id)){
+            Exercise.destroy({
+                where: {
+                    id: id
+                }
+            }).then(() => {
+                res.render("admin/exercises");
+            });
+        }else{
+            res.render("admin/exercises");
+        }
+    }else{
+        res.render("admin/exercises");
+    }
+});
+
 module.exports = router;
