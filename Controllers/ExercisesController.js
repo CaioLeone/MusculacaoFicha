@@ -47,4 +47,36 @@ router.post("/exercises/delete", (req, res) => {
     }
 });
 
+//EDIT BY ID
+router.get("/admin/exercises/edit/:id", (req, res) => {
+    var id = req.body.id;
+    if(isNaN(id)){
+        res.redirect("admin/exercises");
+    }
+
+    Exercise.findByPk(id).then(exercises => {
+        if(id != undefined){
+            res.render("admin/exercises/edit", {exercises: exercises})
+        }else{
+            res.redirect("admin/exercises");
+        }
+    }).catch(error => {
+        res.redirect("admin/exercises");
+    })
+});
+
+//UPDATE
+router.post("/exercises/update", (req, res) => {
+    var id = req.body.id;
+    var exerc_name = req.body.id;
+
+    Muscle.update({exerc_name: exerc_name}, {
+        where: {
+            id: id
+        }
+    }).then(() => {
+        res.redirect("admin/exercises");
+    })
+});
+
 module.exports = router;
