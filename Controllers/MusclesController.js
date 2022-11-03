@@ -1,5 +1,4 @@
 const express = require("express");
-const { where } = require("sequelize");
 const router = express.Router();
 const Muscle = require("../Models/Muscle");
 
