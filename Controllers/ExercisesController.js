@@ -56,7 +56,7 @@ router.get("/admin/exercises/edit/:id", (req, res) => {
 
     Exercise.findByPk(id).then(exercises => {
         if(id != undefined){
-            res.render("admin/exercises/edit", {exercises: exercises})
+            res.render("admin/exercises/edit", {exercises: exercises});
         }else{
             res.redirect("admin/exercises");
         }
