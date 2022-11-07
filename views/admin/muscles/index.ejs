@@ -1,3 +1,47 @@
 <%- include('../../partials/header.ejs') %>
 
+<div class="container">
+    <hr>
+    <h2>Muscle List</h2>
+    <a class="btn btn-dark" href="/admin/muscles/new">Assign Muscle</a>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Muscle Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% muscles.forEach(muscle => { %>
+                <tr>
+                    <th><%= muscle.id %></th>
+                    <th><%= muscle.muscle_name %></th>
+                    <th>
+                        <a class="btn btn-warning" href="/admin/muscles/edit/<%= muscle.id %>"></a>
+                        <form method="post" action="/muscles/delete" style="display: inline;" onsubmit="confirmDel(event, this)">
+                            <input type="hidden" name="id" value="<%= muscle.id %>">
+                            <button class="btn btn-danger">Delete Muscle</button>
+                        </form>
+                    </th>
+                </tr>
+            <% }) %>  
+        </tbody>
+    </table>
+</div>
+
 <%- include('../../partials/footer.ejs') %>
+
+<%# SCRIPT TO CONFIRM DELETE ACTION %>
+<script>
+    function confirmDel(event, form){
+        event.preventDefault();
+        var decision = confirm("Are you sure, savage?");
+        if(decision){
+            console.log("Eye");
+            form.submit();
+        }else{
+            console.log("Wait a moment...");
+        }
+    }
+</script> 

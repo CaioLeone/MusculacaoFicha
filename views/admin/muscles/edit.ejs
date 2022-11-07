@@ -1,3 +1,20 @@
 <%- include('../../partials/header.ejs') %>
 
+<div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header">
+            <h2>Edit Muscles</h2>
+        </div>
+        <div class="card-body">
+            <form action="post" action="/muscles/update">
+                <input class="form-control" type="text" name="muscle_name" placeholder="Edit Muscle" value="<%= muscle.muscle_name %> ">
+                <br>
+                <input type="hidden" name="id" value="<%= muscle.id %>">
+                <button class="btn btn-dark">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <%- include('../../partials/footer.ejs') %>
