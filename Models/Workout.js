@@ -16,4 +16,6 @@ const Workout = connection.define('workouts', {
     }
 });
 
+//Workout.sync({force: true});
+
 module.exports = Workout;

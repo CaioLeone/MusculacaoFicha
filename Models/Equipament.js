@@ -8,4 +8,6 @@ const Equipament = connection.define('equipaments', {
     }
 });
 
+//Equipament.sync({force: true});
+
 module.exports = Equipament;

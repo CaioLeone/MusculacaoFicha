@@ -8,4 +8,6 @@ const Muscle = connection.define('muscles', {
     }
 });
 
+//Muscle.sync({force: true});
+
 module.exports = Muscle;
