@@ -19,3 +19,5 @@ const User = connection.define('Users', {
         allowNull: false
     }
 });
+
+module.exports = User;

@@ -14,4 +14,6 @@ const Workout = connection.define('workouts', {
         type: Sequelize.DATE,
         allowNull: false
     }
-})
+});
+
+module.exports = Workout;

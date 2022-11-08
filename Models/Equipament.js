@@ -6,4 +6,6 @@ const Equipament = connection.define('equipaments', {
         type: Sequelize.STRING,
         allowNull: false
     }
-})
+});
+
+module.exports = Equipament;

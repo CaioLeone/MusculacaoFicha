@@ -6,4 +6,6 @@ const Muscle = connection.define('muscles', {
         type: Sequelize.STRING,
         allowNull: false
     }
-})
+});
+
+module.exports = Muscle;
