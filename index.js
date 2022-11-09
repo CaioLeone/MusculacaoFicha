@@ -25,7 +25,7 @@ app.use("/", exercisesController);
 app.use("/", musclesController);
 app.use("/", userController);
 
-//CONEXAO BANCO DE DADOS
+//DATABASE CONNECTION
 connection
     .authenticate()
     .then(() => {
@@ -33,10 +33,6 @@ connection
     }).catch((error) => {
         console.log(error);
     })
-
-app.listen(3030, () =>{
-    console.log("Tudo certo na bahia. Serv rodando na porta 3030");
-});
 
 //VIEW ENGINE
 app.set('view engine', 'ejs');
@@ -47,3 +43,14 @@ app.use(express.static('public'));
 //BODY-PARSER
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+
+//ROUTES
+app.get("/", (req, res) => {
+    res.render("index");
+});
+
+
+app.listen(3030, () =>{
+    console.log("Tudo certo na bahia. Serv rodando na porta 3030");
+});
