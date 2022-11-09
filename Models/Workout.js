@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const connection = require('../database/database');
+const Exercise = require("../Models/Exercise");
 
 const Workout = connection.define('workouts', {
     workout_name: {
@@ -15,6 +16,9 @@ const Workout = connection.define('workouts', {
         allowNull: false
     }
 });
+
+Workout.hasMany(Exercise);
+Exercise.belongsTo(Workout);
 
 //Workout.sync({force: true});
 

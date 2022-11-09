@@ -7,21 +7,21 @@ const bodyParser = require("body-parser");
 //IMPORT CONTROLLER
 const equipamentsController = require("./Controllers/EquipamentsController");
 const exercisesController = require("./Controllers/ExercisesController");
-//const workoutController = require("./Controllers/WorkoutsController");
+const workoutController = require("./Controllers/WorkoutsController");
 const musclesController = require("./Controllers/MusclesController");
 const userController = require("./Controllers/UsersController");
 
 //MODELS IMPORT
 const Equipament = require("./Models/Equipament");
 const Exercise = require("./Models/Exercise");
-//const Workout = require("./Models/Workout");
+const Workout = require("./Models/Workout");
 const Muscle = require("./Models/Muscle");
 const User = require("./Models/User");
 
 //CONTROLLERS ROUTES 
 app.use("/", equipamentsController);
 app.use("/", exercisesController);
-//app.use("/", workoutController);
+app.use("/", workoutController);
 app.use("/", musclesController);
 app.use("/", userController);
 
