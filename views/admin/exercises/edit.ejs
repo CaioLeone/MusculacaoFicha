@@ -6,13 +6,13 @@
     <hr>
     <div class="card">
         <div class="card-header">
-            <h2>Edit Muscles</h2>
+            <h2>Edit Exercise</h2>
         </div>
         <div class="card-body">
-            <form action="post" action="/muscles/update">
-                <input class="form-control" type="text" name="muscle_name" placeholder="Edit Muscle" value="<%= muscle.muscle_name %>">
+            <form action="post" action="/exercises/update">
+                <input class="form-control" type="text" name="exerc_name" placeholder="Edit Exercise" value="<%= exercise.exerc_name  %>">
                 <br>
-                <input type="hidden" name="id" value="<%= muscle.id %>">
+                <input type="hidden" name="id" value="<%= exercise.id %>">
                 <button class="btn btn-dark">Update</button>
             </form>
         </div>

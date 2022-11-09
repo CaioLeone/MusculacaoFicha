@@ -1,0 +1,21 @@
+<%- include('../../partials/header.ejs') %>
+
+<%- include('../../partials/navbar.ejs') %>
+
+<div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header">
+            <h2>Assign Exercise</h2>
+        </div>
+        <div class="card-body">
+            <form method="post" action="/exercises/save">
+                <input class="form-control" type="text" name="exerc_name" placeholder="Assign new exerecise">
+                <button class="btn btn-dark">Assign</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<%- include('../../partials/footer.ejs') %>
