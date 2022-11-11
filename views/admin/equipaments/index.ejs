@@ -1,0 +1,48 @@
+<%- include('../../partials/header.ejs') %>
+
+<%- include('../../partials/navbar.ejs') %>
+
+<div class="container">
+    <hr>
+    <h2>Equipaments</h2>
+    <a class="btn btn-sucsess" href="/admin/equipaments/new">New Equipaments</a>
+    <hr>
+    <table class="table tabl-bordered">
+        <thead>
+            <tr>
+                <th>Equipaments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% equipaments.forEach(equipament =>{ %>
+                <tr>
+                    <th><%= equipament.id %> </th>
+                    <th><%= equipament.equip_name %> </th>
+                    <th>
+                        <a href="/admin/equipaments/edit/<%= equipaments.id %>" class="btn btn-warning">Edit</a>
+                        <form method="post" action="/equipaments/delete" style="display: inline;" onsubmit="confirmDel(event, this)">
+                            <input type="hidden" name="id" value="<%= equipaments.id %>">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </th>
+                </tr>
+            <% }) %>  
+        </tbody>
+    </table>
+</div>
+
+<%- include('../../partials/footer.ejs') %>
+
+<%# CONFIRMDEL SCRIPT %>
+<script>
+    function confirmDel(event, form){
+        event.preventDefault();
+        var decision = confirm("You sure about that?");
+        if(decision){
+            console.log("Eye");
+            form.submit();
+        }else{
+            console.log("I'm not sure");
+        }
+    }
+</script> 
