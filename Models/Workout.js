@@ -15,11 +15,7 @@ const Workout = connection.define('workouts', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    period_Init: {
-        type: Sequelize.DATE,
-        allowNull: false
-    },
-    period_End: {
+    workout_period: {
         type: Sequelize.DATE,
         allowNull: false
     },
