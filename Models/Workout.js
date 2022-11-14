@@ -39,7 +39,6 @@ Equipament.belongsTo(Exercise);
 Workout.hasMany(Exercise);
 Exercise.belongsTo(Workout);
 
-
 //Workout.sync({force: true});
 
 module.exports = Workout;

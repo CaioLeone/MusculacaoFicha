@@ -1,9 +1,13 @@
 const express = require("express");
+const Equipament = require("../Models/Equipament");
+const Exercise = require("../Models/Exercise");
 const router = express.Router();
 const Workout = require("../Models/Workout");
 
 router.get("/admin/workouts/new", (req, res) => {
-    res.render("admin/workouts/new");
+    Exercise.findAll().then(exercises => {
+        res.render("admin/workouts/new", {exercises: exercises})
+    })
 });
 
 //CREATE WORKOUT
@@ -29,14 +33,11 @@ router.post("/workouts/save",(req, res) =>{
 
 //SHOW WORKOUTS
 router.get("/admin/workouts", (req, res) => {
-    Workout.findAll().then(workouts => {
-        res.render("admin/workouts/index", {
-            workout_name: workout_name, 
-            workout_period: workout_period, 
-            workout_reps: workout_name,
-            workout_sets: workout_sets
-        });
-    });
+    Workout.findAll({
+        include: [{model: Exercise, model: Equipament}]
+    }).then(workouts => {
+        res.render("admin/workouts/index", {exercises: exercises, equipaments: equipaments})
+    })
 });
 
 //DELETE WORKOUT BY ID
