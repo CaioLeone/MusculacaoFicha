@@ -22,6 +22,14 @@ const Workout = connection.define('workouts', {
     period_End: {
         type: Sequelize.DATE,
         allowNull: false
+    },
+    workout_reps:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    workout_sets:{
+        type: Sequelize.INTEGER,
+        allowNull: false
     }
 });
 

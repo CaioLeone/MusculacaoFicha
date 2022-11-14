@@ -11,12 +11,16 @@ router.post("/workouts/save",(req, res) =>{
     var workout_name = req.body.workout_name;
     var period_Init = req.body.period_Init;
     var period_End = req.body.period_End;
+    var workout_reps = req.body.workout_reps;
+    var workout_sets = req.body.workout_sets;
 
-    if(workout_name != undefined && (period_Init != undefined && period_End != undefined)){
+    if(workout_name != undefined && (period_Init != undefined && period_End != undefined) && (workout_reps != undefined && workout_sets != undefined)){
         Workout.create({
             workout_name: workout_name,
             period_Init: period_Init,
-            period_End: period_End
+            period_End: period_End,
+            workout_reps: workout_reps,
+            workout_sets:workout_sets
         }).then(() => {
             
         })
@@ -28,7 +32,13 @@ router.post("/workouts/save",(req, res) =>{
 //SHOW WORKOUTS
 router.get("/admin/workouts", (req, res) => {
     Workout.findAll().then(workouts => {
-        res.render("admin/workouts/index", {workout_name: workout_name, period_Init: period_Init, period_End: period_End});
+        res.render("admin/workouts/index", {
+            workout_name: workout_name, 
+            period_Init: period_Init, 
+            period_End: period_End,
+            workout_reps: workout_name,
+            workout_sets: workout_sets
+        });
     });
 });
 
@@ -77,11 +87,15 @@ router.post("/admin/workouts/update", (req, res) => {
     var workout_name = req.body.workout_name;
     var period_Init = req.body.period_Init;
     var period_End = req.body.period_End;
+    var workout_reps = req.body.workout_reps;
+    var workout_sets = req.body.workout_sets;
 
     Workout.update({
         workout_name: workout_name,
         period_Init: period_Init,
-        period_End: period_End
+        period_End: period_End,
+        workout_reps: workout_reps,
+        workout_sets: workout_sets
     },{
         where:{
             id: id
