@@ -3,7 +3,7 @@ const router = express.Router();
 const Equipament = require("../Models/Equipament");
 
 router.get("/admin/equipaments/new", (req, res) => {
-    res.render("admin/articles/new");
+    res.render("admin/equipaments/new");
 });
 
 //CREATE EQUIPAMENT

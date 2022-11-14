@@ -3,11 +3,11 @@ const router = express.Router();
 const Exercise = require("../Models/Exercise");
 
 router.get("/admin/exercises/new", (req, res) => {
-    res.render("admin/exercise/new");
+    res.render("admin/exercises/new");
 });
 
 //CREATE EXERCISE
-router.post("/admin/exercise/create", (req, res) => {
+router.post("/admin/exercises/create", (req, res) => {
     var exerc_name = req.body.exerc_name;
     if(exerc_name != undefined){
         Exercise.create({

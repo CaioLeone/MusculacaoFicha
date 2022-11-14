@@ -1,10 +1,9 @@
-const Sequelize = require('sequelize');
-const connection = require('../database/database');
+const Sequelize = require("sequelize");
+const connection = require("../database/database");
 
-const Exercise = require("../Models/Exercise");
 const Muscle = require("../Models/Muscle");
 const Equipament = require("../Models/Equipament");
-
+const Exercise = require("../Models/Exercise");
 
 const Workout = connection.define('workouts', {
     id: {
@@ -25,6 +24,7 @@ const Workout = connection.define('workouts', {
         allowNull: false
     }
 });
+
 
 Exercise.hasMany(Muscle);
 Muscle.belongsTo(Exercise);
