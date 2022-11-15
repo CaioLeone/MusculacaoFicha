@@ -1,8 +1,6 @@
 const Sequelize = require("sequelize");
 const connection = require("../database/database");
 
-const Muscle = require("../Models/Muscle");
-const Equipament = require("../Models/Equipament");
 const Exercise = require("../Models/Exercise");
 
 const Workout = connection.define('workouts', {
@@ -28,13 +26,6 @@ const Workout = connection.define('workouts', {
         allowNull: false
     }
 });
-
-
-Exercise.hasMany(Muscle);
-Muscle.belongsTo(Exercise);
-
-Exercise.hasMany(Equipament);
-Equipament.belongsTo(Exercise);
 
 Workout.hasMany(Exercise);
 Exercise.belongsTo(Workout);
