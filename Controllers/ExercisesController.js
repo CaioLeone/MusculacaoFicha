@@ -1,9 +1,13 @@
 const express = require("express");
+const Equipament = require("../Models/Equipament");
 const router = express.Router();
 const Exercise = require("../Models/Exercise");
+const Muscle = require("../Models/Muscle");
 
 router.get("/admin/exercises/new", (req, res) => {
-    res.render("admin/exercises/new");
+    Exercise.findAll().then(exercises => {
+        res.render("admin/exercises/new");
+    })
 });
 
 //CREATE EXERCISE
@@ -22,7 +26,9 @@ router.post("/admin/exercises/create", (req, res) => {
 
 //SHOW EXERCISES 
 router.get("/admin/exercises", (req, res) => {
-    Exercise.findAll().then(exercises => {
+    Exercise.findAll({
+        include: [{model: Muscle, model: Equipament}]
+    }).then(exercises => {
         res.render("admin/exercises/index", {exercises: exercises});
     });
 });
