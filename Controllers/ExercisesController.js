@@ -4,9 +4,20 @@ const router = express.Router();
 const Exercise = require("../Models/Exercise");
 const Muscle = require("../Models/Muscle");
 
+router.get("/admin/exercises", (req, res) => {
+    Exercise.findAll({
+        include: [{model: Muscle, model: Equipament}]
+    }).then(exercises => {
+        res.render("admin/exercises/index", {exercises: exercises});
+    })
+});
+
+//NEW EXERCISES
 router.get("/admin/exercises/new", (req, res) => {
-    Exercise.findAll().then(exercises => {
-        res.render("admin/exercises/new");
+    Muscle.findAll().then(muscles => {
+        Equipament.findAll().then(equipaments => {
+            res.render("admin/articles/new", {muscles: muscles, equipaments: equipaments})
+        })
     })
 });
 
