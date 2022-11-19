@@ -22,80 +22,81 @@ router.get("/admin/exercises/new", (req, res) => {
     })
 });
 
-//-----------------------------------------------------------------------------------------
-//CREATE EXERCISE
-router.post("/admin/exercises/create", (req, res) => {
+//SAVE EXERCISES
+router.post("/admin/exercises/save", (req, res) => {
     var exerc_name = req.body.exerc_name;
-    if(exerc_name != undefined){
-        Exercise.create({
-            exerc_name: exerc_name
-        }).then(() => {
-            
-        })
-    }else{
-        res.redirect("admin/exercises/new");
-    }
+    var muscle = req.body.muscle;
+    var equipament = req.body.equipament;
+
+    Exercise.create({
+        exerc_name: exerc_name,
+        muscleId: muscle,
+        equipamentId: equipament
+    }).then(() => {
+        res.redirect("/admin/exercises");
+    })
 });
 
-//SHOW EXERCISES 
-router.get("/admin/exercises", (req, res) => {
-    Exercise.findAll({
-        include: [{model: Muscle, model: Equipament}]
-    }).then(exercises => {
-        res.render("admin/exercises/index", {exercises: exercises});
-    });
-});
-
-//DELETE BY ID
-router.post("/exercises/delete", (req, res) => {
+//DELETE EXERCISES
+router.post("/admin/exercises/delete", (req, res) => {
     var id = req.body.id;
     if(id != undefined){
-        if(isNaN(id)){
+        if(!isNaN(id)){
             Exercise.destroy({
-                where: {
+                where:{
                     id: id
                 }
             }).then(() => {
-                res.render("admin/exercises");
+                res.redirect("admin/exercises");
             });
-        }else{
-            res.render("admin/exercises");
+        }else{//IF NOT NUMBER
+            res.redirect("admin/exercises");
         }
-    }else{
-        res.render("admin/exercises");
+    }else{//IF NULL
+        res.redirect("admin/exercises");
     }
 });
 
-//EDIT BY ID
+//EDIT EXERCISES
 router.get("/admin/exercises/edit/:id", (req, res) => {
     var id = req.body.id;
+
     if(isNaN(id)){
-        res.redirect("admin/exercises");
+        res.redirect("/admin/articles");
     }
 
-    Exercise.findByPk(id).then(exercises => {
-        if(id != undefined){
-            res.render("admin/exercises/edit", {exercises: exercises});
+    Exercise.findByPk(id).then(exercise => {
+        if(exercise != undefined){
+            Muscle.findAll().then(muscles => {
+                Equipament.findAll().then(equipaments => {
+                    res.render("admin/exercises/edit", {exercise: exercise, muscle: muscle, equipament: equipament});
+                })
+            })
         }else{
-            res.redirect("admin/exercises");
+            res.render("admin/exercises");
         }
     }).catch(error => {
         res.redirect("admin/exercises");
     })
 });
 
-//UPDATE
-router.post("/exercises/update", (req, res) => {
-    var id = req.body.id;
-    var exerc_name = req.body.id;
+//UPDATE EXERCISE
+router.post("/exercises/update", (req,res) => {
+    var exerc_name = req.body.exerc_name;
+    var muscle = req.body.muscle;
+    var equipament = req.body.equipament;
 
-    Muscle.update({exerc_name: exerc_name}, {
+    Exercise.update({exerc_name: exerc_name, muscleId: muscle, equipamentId: equipament}, {
         where: {
             id: id
         }
     }).then(() => {
-        res.redirect("admin/exercises");
+        res.redirect("/admin/exercises");
+    }).catch(error => {
+        res.redirect("/");
     })
 });
+
+//PAGINATION
 
 module.exports = router;
