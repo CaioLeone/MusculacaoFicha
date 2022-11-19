@@ -1,9 +1,10 @@
 const express = require("express");
-const Equipament = require("../Models/Equipament");
 const router = express.Router();
 const Exercise = require("../Models/Exercise");
 const Muscle = require("../Models/Muscle");
+const Equipament = require("../Models/Equipament");
 
+//EXERCISS INDEX 
 router.get("/admin/exercises", (req, res) => {
     Exercise.findAll({
         include: [{model: Muscle, model: Equipament}]
@@ -21,6 +22,7 @@ router.get("/admin/exercises/new", (req, res) => {
     })
 });
 
+//-----------------------------------------------------------------------------------------
 //CREATE EXERCISE
 router.post("/admin/exercises/create", (req, res) => {
     var exerc_name = req.body.exerc_name;
