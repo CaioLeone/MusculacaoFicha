@@ -12,6 +12,21 @@
             <form method="post" action="/exercises/save">
                 <input class="form-control" type="text" name="exerc_name" placeholder="Assign new exerecise">
                 <br>
+
+                <label>Muscle</label>
+                <select name="muscle_name" class="form-control">
+                    <% muscles.forEach((muscle) => { %>
+                        <option value="<%= muscle.id %>"><%= muscle.muscle_name %></option>
+                    <% }) %>
+                </select><br>
+
+                <label>Equipament</label>
+                <select name="equip_name" class="form-control">
+                    <% equipaments.forEach((equipament) => { %>
+                        <option value="<%= equipament.id %>"><%= equipament.equip_name %></option>
+                    <% }) %>
+                </select><br>
+
                 <button class="btn btn-dark">Assign</button>
             </form>
         </div>
