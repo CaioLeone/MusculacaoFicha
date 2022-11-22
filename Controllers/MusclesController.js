@@ -9,18 +9,20 @@ router.get("/admin/muscles/new", (req, res) => {
 //CREATE MUSCLE
 router.post("/muscles/save", (req, res) => {
     var muscle_name = req.body.muscle_name;
-    
+     
     if(muscle_name != undefined){
+
         Muscle.create({
             muscle_name: muscle_name
         }).then(() => {
-
+            res.redirect("/admin/muscles")
         })
     }else{
-        res.redirect("admin/muscles/new");
+        res.redirect("/admin/muscles/new");
     }
 });
 
+/*
 //SHOW MUSCLE LIST
 router.get("/admin/muscles", (req, res) => {
     Muscle.findAll().then(muscles => {
@@ -79,5 +81,5 @@ router.post("/muscles/update", (req, res) => {
         res.redirect("admin/muscles");
     })
 });
-
+*/
 module.exports = router;

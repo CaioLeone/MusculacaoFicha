@@ -9,11 +9,12 @@ router.get("/admin/equipaments/new", (req, res) => {
 //CREATE EQUIPAMENT
 router.post("/equipaments/save", (req, res) => {
     var equip_name = req.body.equip_name;
+    
     if(equip_name != undefined){
         Equipament.create({
             equip_name: equip_name
         }).then(() => {
-
+            res.redirect("/admin/equipaments");
         })
     }else{
         res.redirect("/admin/equipaments/new");
