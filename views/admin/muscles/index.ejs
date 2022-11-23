@@ -21,7 +21,7 @@
                     <th><%= muscle.muscle_name %></th>
                     <th>
                         <a class="btn btn-warning" href="/admin/muscles/edit/<%= muscle.id %>"></a>
-                        <form method="post" action="/muscles/delete" style="display: inline;" onsubmit="confirmDel(event, this)">
+                        <form method="POST" action="/muscles/delete" style="display: inline;" onsubmit="confirmDel(event, this)">
                             <input type="hidden" name="id" value="<%= muscle.id %>">
                             <button class="btn btn-danger">Delete Muscle</button>
                         </form>

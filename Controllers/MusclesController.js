@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Muscle = require("../Models/Muscle");
+const slugify = require("slugify");
 
 router.get("/admin/muscles/new", (req, res) => {
     res.render("admin/muscles/new");
@@ -13,7 +14,8 @@ router.post("/muscles/save", (req, res) => {
     if(muscle_name != undefined){
 
         Muscle.create({
-            muscle_name: muscle_name
+            muscle_name: muscle_name,
+            slug: slugify(muscle_name)
         }).then(() => {
             res.redirect("/admin/muscles")
         })
@@ -22,14 +24,13 @@ router.post("/muscles/save", (req, res) => {
     }
 });
 
-/*
 //SHOW MUSCLE LIST
 router.get("/admin/muscles", (req, res) => {
     Muscle.findAll().then(muscles => {
         res.render("admin/muscles/index", {muscles: muscles});
     });
 });
-
+/*
 //DELETE BY ID
 router.post("/muscles/delete", (req, res) => {
     var id = req.body.id;
