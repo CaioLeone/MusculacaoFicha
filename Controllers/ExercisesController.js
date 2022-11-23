@@ -3,7 +3,7 @@ const router = express.Router();
 const Exercise = require("../Models/Exercise");
 const Muscle = require("../Models/Muscle");
 const Equipament = require("../Models/Equipament");
-
+/*
 //EXERCISS INDEX 
 router.get("/admin/exercises", (req, res) => {
     Exercise.findAll({
@@ -98,5 +98,5 @@ router.post("/exercises/update", (req,res) => {
 });
 
 //PAGINATION
-
+*/
 module.exports = router;

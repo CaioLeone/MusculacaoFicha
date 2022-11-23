@@ -4,6 +4,7 @@ const Exercise = require("../Models/Exercise");
 const router = express.Router();
 const Workout = require("../Models/Workout");
 
+/*
 router.get("/admin/workouts/new", (req, res) => {
     Exercise.findAll().then(exercises => {
         res.render("admin/workouts/new", {exercises: exercises})
@@ -100,5 +101,6 @@ router.post("/admin/workouts/update", (req, res) => {
         res.redirect("/admin/workouts");
     })
 });
+*/
 
 module.exports = router;

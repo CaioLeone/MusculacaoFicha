@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require("../Models/User");
 
+/*
 router.get("/admin/users/new", (req, res) => {
     res.render("admin/users/new");
 });
@@ -88,6 +89,6 @@ router.post("/admin/users/update", (req,res) => {
         res.render("admin/users");
     })
 });
-
+*/
 
 module.exports = router;
