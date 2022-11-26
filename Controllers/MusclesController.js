@@ -30,7 +30,7 @@ router.get("/admin/muscles", (req, res) => {
         res.render("admin/muscles/index", {muscles: muscles});
     });
 });
-/*
+
 //DELETE BY ID
 router.post("/muscles/delete", (req, res) => {
     var id = req.body.id;
@@ -50,7 +50,7 @@ router.post("/muscles/delete", (req, res) => {
         res.redirect("admin/muscles");
     }
 });
-
+/*
 //EDIT MUSCLE
 router.get("/admin/muscles/edit/:id", (req, res) => {
     var id = req.params.id;
