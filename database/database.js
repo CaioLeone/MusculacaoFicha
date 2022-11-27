@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+const Sequelize = require("sequelize");
 
 const connection = new Sequelize('FichaMusculacao', 'root', '123456', {
     host: 'localhost',
