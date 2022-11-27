@@ -10,14 +10,12 @@ router.get("/admin/muscles/new", (req, res) => {
 //CREATE MUSCLE
 router.post("/muscles/save", (req, res) => {
     var muscle_name = req.body.muscle_name;
-     
     if(muscle_name != undefined){
-
         Muscle.create({
             muscle_name: muscle_name,
             slug: slugify(muscle_name)
         }).then(() => {
-            res.redirect("/admin/muscles")
+            res.redirect("/admin/muscles/new");
         })
     }else{
         res.redirect("/admin/muscles/new");
@@ -30,7 +28,7 @@ router.get("/admin/muscles", (req, res) => {
         res.render("admin/muscles/index", {muscles: muscles});
     });
 });
-
+/*
 //DELETE BY ID
 router.post("/muscles/delete", (req, res) => {
     var id = req.body.id;
@@ -50,7 +48,7 @@ router.post("/muscles/delete", (req, res) => {
         res.redirect("admin/muscles");
     }
 });
-/*
+
 //EDIT MUSCLE
 router.get("/admin/muscles/edit/:id", (req, res) => {
     var id = req.params.id;
