@@ -1,36 +1,36 @@
 <%- include('../../partials/header.ejs') %>
 
 <%- include('../../partials/navbar.ejs') %>
-
-<div class="container">
-    <hr>
-    <div class="card-header">
-        <h2>Assign Workout</h2>
+<body>
+    <div class="container">
+        <hr>
+        <div class="card-header">
+            <h2>Assign Workout</h2>
+        </div>
+        
+        <div class="card-body">
+            <form action="post" action="/workout/save">
+                <input class="form-control" type="text" name="workout-name" placeholder="Workout Name">
+                
+                <label>Exercise</label>
+                <select name="exercise" id="form-control">
+                    <% exercises.forEach((exercise) => { %>
+                        <option value="<%= exercise.id %>"> <%= exercise.exerc_name %> </option>
+                    <% }) %>  
+                </select>
+                
+                <br>
+                
+                <label>Equipament</label>
+                <select name="equipament" id="form-control">
+                    <% equipaments.forEach((equipament) => { %> 
+                        <option value="<% equipaments.id %>"> <%= equipament.equip_name %> </option>
+                    <% }) %>
+                </select>
+                <br>
+                <button class="btn btn-dark">Assign</button>
+            </form>
+        </div>
     </div>
-    
-    <div class="card-body">
-        <form action="post" action="/workout/save">
-            <input class="form-control" type="text" name="workout-name" placeholder="Workout Name">
-            
-            <label>Exercise</label>
-            <select name="exercise" id="form-control">
-                <% exercises.forEach((exercise) => { %>
-                    <option value="<%= exercise.id %>"> <%= exercise.exerc_name %> </option>
-                <% }) %>  
-            </select>
-            
-            <br>
-            
-            <label>Equipament</label>
-            <select name="equipament" id="form-control">
-                <% equipaments.forEach((equipament) => { %> 
-                    <option value="<% equipaments.id %>"> <%= equipament.equip_name %> </option>
-                <% }) %>
-            </select>
-            <br>
-            <button class="btn btn-dark">Assign</button>
-        </form>
-    </div>
-</div>
-
+</body>
 <%- include('../../partials/footer.ejs') %>

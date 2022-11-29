@@ -18,9 +18,9 @@
             <% muscles.forEach(muscle => { %>
                 <tr>
                     <th><%= muscle.id %></th>
-                    <th><%= muscle.muscle_name %></th>
+                    <th><%= muscle.muscleName %></th>
                     <th>
-                        <a class="btn btn-warning" href="/admin/muscles/edit/<%= muscle.id %>"></a>
+                        <a class="btn btn-warning" href="/admin/muscles/edit/<%= muscle.id %>">Edit</a>
                         <form method="POST" action="/muscles/delete" style="display: inline;" onsubmit="confirmDel(event, this)">
                             <input type="hidden" name="id" value="<%= muscle.id %>">
                             <button class="btn btn-danger">Delete Muscle</button>

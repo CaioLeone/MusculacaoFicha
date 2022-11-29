@@ -1,22 +1,21 @@
 <%- include('../../partials/header.ejs') %>
 
 <%- include('../../partials/navbar.ejs') %>
-
-<div class="container">
-    <hr>
-    <div class="card">
-        <div class="card-header">
-            <h2>Assign Equipament</h2>
-        </div>
-        <div class="card-body">
-            <form method="post" action="/equipaments/save">
-                <input class="form-control" type="text" name="equip_name" placeholder="Assign new Equipament">
-                <br>
-                <button class="btn btn-dark">Assign</button>
-            </form>
+<body>
+    <div class="container">
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h2>Assign Equipament</h2>
+            </div>
+            <div class="card-body">
+                <form method="post" action="/equipaments/save">
+                    <input class="form-control" type="text" name="equip_name" placeholder="Assign new Equipament">
+                    <br>
+                    <button class="btn btn-dark">Assign</button>
+                </form>
+            </div>
         </div>
     </div>
-
-</div>
-
+</body>
 <%- include('../../partials/footer.ejs') %>

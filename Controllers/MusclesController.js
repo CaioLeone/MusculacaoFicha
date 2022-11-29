@@ -9,11 +9,11 @@ router.get("/admin/muscles/new", (req, res) => {
 
 //CREATE MUSCLE
 router.post("/muscles/save", (req, res) => {
-    var muscle_name = req.body.muscle_name;
-    if(muscle_name != undefined){
+    var muscleName = req.body.muscleName;
+    if(muscleName != undefined){
         Muscle.create({
-            muscle_name: muscle_name,
-            slug: slugify(muscle_name)
+            muscleName: muscleName,
+            slug: slugify(muscleName)
         }).then(() => {
             res.redirect("/admin/muscles/new");
         })

@@ -18,12 +18,6 @@ const Muscle = require("./Models/Muscle");
 //const Workout = require("./Models/Workout");
 //const User = require("./Models/User");
 
-//CONTROLLERS ROUTES 
-app.use("/", equipamentsController);
-app.use("/", musclesController);
-//app.use("/", exercisesController);
-//app.use("/", workoutController);
-//app.use("/", userController);
 
 //DATABASE CONNECTION
 connection
@@ -50,6 +44,12 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
+//CONTROLLERS ROUTES 
+app.use("/", equipamentsController);
+app.use("/", musclesController);
+//app.use("/", exercisesController);
+//app.use("/", workoutController);
+//app.use("/", userController);
 
 app.listen(3030, () =>{
     console.log("Tudo certo na bahia. Serv rodando na porta 3030");

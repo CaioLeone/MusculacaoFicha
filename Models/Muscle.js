@@ -7,9 +7,10 @@ const Muscle = connection.define('muscles', {
         autoIncrement: true,
         primaryKey: true
     },
-    muscle_name: {
+    muscleName: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        field: "muscle_name"
     },
     slug: {
         type: Sequelize.STRING,
