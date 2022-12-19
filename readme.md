@@ -30,6 +30,12 @@
 
 * Body-parser
 
+* HTML
+
+* CSS
+
+* Bootstrap
+
 ## Equipaments
 
 1. Polia
