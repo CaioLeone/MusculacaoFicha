@@ -63,7 +63,7 @@
 
 ## Exercicios
 
-* Exercicios que compreendam todos todos os grupos musculares
+* Exercicios que compreendam todos os grupos musculares
 * Descricao 
 * Execucao
 
