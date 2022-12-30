@@ -30,9 +30,9 @@
 
 * Body-parser
 
-* HTML
+* HTML 5
 
-* CSS
+* CSS 3
 
 * Bootstrap
 
