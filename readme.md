@@ -38,14 +38,14 @@
 
 ## Equipaments
 
-1. Polia
-2. Halteres
-3. Rosca
+1. Pullei 
+2. Dumbbell 
+3. Barbell 
 4. Kettlebell
-5. Aparelho
-6. Livre
+5. Machine
+6. Free 
 
-## Grupo Muscular
+## Muscular group 
 
 1. Trapezio
 2. Deltoide
@@ -61,7 +61,7 @@
 12. Posterior
 13. Panturrilha 
 
-## Exercicios
+## Exercises 
 
 * Exercicios que compreendam todos os grupos musculares
 * Descricao 
