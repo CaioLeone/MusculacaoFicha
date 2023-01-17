@@ -38,7 +38,7 @@
 
 ## Equipaments
 
-1. Pullei 
+1. Pulley
 2. Dumbbell 
 3. Barbell 
 4. Kettlebell
