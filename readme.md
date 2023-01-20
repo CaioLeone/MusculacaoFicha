@@ -43,7 +43,7 @@
 3. Barbell 
 4. Kettlebell
 5. Machine
-6. Free 
+6. Free/no equipament 
 
 ## Muscular group 
 
