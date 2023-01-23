@@ -41,7 +41,7 @@
 3. Barbell 
 4. Kettlebell
 5. Machine
-6. Free 
+6. Free/no equipament 
 
 ## Muscular group 
 
@@ -62,13 +62,13 @@
 ## Exercises 
 
 * Exercicios que compreendam todos os grupos musculares
-* Descricao 
-* Execucao
+* Description 
+* Right Way to do it
 
 ## Ficha
 
-* Exercicio
-* Equipamento 
-* Grupo(s) Muscular(es)
-* Repetição
-* Carga
+* Exercise
+* Equipament 
+* Muscular Group
+* Sets
+* Weight
