@@ -14,27 +14,25 @@
 
 ## Technologies
 
-* Javascript
+* [Javascript](https://www.javascript.com/)
 
-* NodeJS
+* [NodeJS](https://nodejs.org/en/)
 
-* Express
+* [Express](https://expressjs.com/)
 
-* Ejs
+* [Ejs](https://ejs.co/)
 
-* Nodemon
+* [Nodemon](https://nodemon.io/)
 
-* Bcrypt
+* [Sequelize](https://sequelize.org/)
 
-* Sequelize
+* [Body-parser](https://www.npmjs.com/package/body-parser)
 
-* Body-parser
+* [HTML](https://html.com/)
 
-* HTML 5
+* [CSS](https://www.w3schools.com/css/)
 
-* CSS 3
-
-* Bootstrap
+* [Bootstrap](https://getbootstrap.com/)
 
 ## Equipaments
 
