@@ -20,6 +20,8 @@
 
 * [Express](https://expressjs.com/)
 
+* [Knex](https://knexjs.org/)
+
 * [Ejs](https://ejs.co/)
 
 * [Nodemon](https://nodemon.io/)
