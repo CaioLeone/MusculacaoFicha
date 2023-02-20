@@ -47,23 +47,23 @@
 
 ## Muscular group 
 
-1. Trapezio
-2. Deltoide
-3. Costas
-4. Lombar
+1. Trapez
+2. Deltoids
+3. Back
+4. Lower Back
 5. Biceps
 6. Triceps
-7. Antebraço
-8. Peitoral
-9. Abdmonen
-10. Obliquo
-11. Quadriceps
+7. Forearm
+8. Pecs
+9. Abs
+10. Obliqes
+11. Quads
 12. Posterior
 13. Panturrilha 
 
 ## Exercises 
 
-* Exercicios que compreendam todos os grupos musculares
+* Exercises that include all muscular groups
 * Description 
 * Right Way to do it
 
